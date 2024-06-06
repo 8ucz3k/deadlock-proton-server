@@ -1,0 +1,20 @@
+version: '1.0'
+services:
+  deadlock:
+    restart: always
+    container_name: deadlock
+    image: deadlock-proton-server
+    volumes:
+      - ./server:/app
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/machine-id:/etc/machine-id:ro
+    environment:
+      - PORT=${PORT}
+      - SERVER_PASSWORD=${SERVER_PASSWORD}
+      - MAP=${MAP}
+      - STEAM_LOGIN=${STEAM_LOGIN}
+      - STEAM_PASSWORD=${STEAM_PASSWORD}
+    networks:
+      - default
+    ports:
+      - "27015:27015/udp"
