@@ -40,7 +40,7 @@ if [ "${DirPerm}" != "1000:1000:755" ];then
 fi
 
 set -x
-$steamcmd +@sSteamCmdForcePlatformType windows +force_install_dir ${DeadlockDir} +login ${STEAM_LOGIN} ${STEAM_PASSWORD} +app_update ${APPID} validate +quit || die
+$steamcmd +@sSteamCmdForcePlatformType windows +force_install_dir ${DeadlockDir} +login ${STEAM_LOGIN} ${STEAM_PASSWORD} ${STEAM_2FA_CODE} +app_update ${APPID} validate +quit || die
 set +x
 
 DeadlockExe="${DeadlockDir}/game/bin/win64/project8.exe"

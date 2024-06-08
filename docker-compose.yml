@@ -14,6 +14,7 @@ services:
       - MAP=${MAP}
       - STEAM_LOGIN=${STEAM_LOGIN}
       - STEAM_PASSWORD=${STEAM_PASSWORD}
+      - STEAM_2FA_CODE=${STEAM_2FA_CODE}
     networks:
       - default
     ports:
